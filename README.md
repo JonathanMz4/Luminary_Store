@@ -9,10 +9,14 @@
   [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
   [![SCSS Modules](https://img.shields.io/badge/SCSS-Modules-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
   [![JWT](https://img.shields.io/badge/Auth-JWT_&_Bcrypt-black?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
-  [![Netlify](https://img.shields.io/badge/Deploy-Netlify_Ready-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+  [![Netlify](https://img.shields.io/badge/Deploy-Netlify_Live-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://storeluminary.netlify.app/)
 
   <p align="center">
     <strong>Plataforma e-commerce Full Stack corporativa inspirada nos mais altos padrões de design e engenharia da Apple, Stripe, Linear e Vercel.</strong>
+  </p>
+
+  <p align="center">
+    🚀 <strong><a href="https://storeluminary.netlify.app/" target="_blank">Acesse a Demonstração Online no Netlify</a></strong> 🚀
   </p>
 
   <p align="center">
@@ -242,8 +246,9 @@ Para agilizar a avaliação do projeto por recrutadores e revisores técnicos:
 
 Desenvolvido por **Jonathan Menezes**.
 
-- **GitHub:** [@JonathanMenezes](https://github.com/JonathanMenezes)
-- **LinkedIn:** [Jonathan Menezes](https://www.linkedin.com/in/jonathan-menezes/)
+- **Demonstração Online:** [storeluminary.netlify.app](https://storeluminary.netlify.app/)
+- **GitHub:** [@JonathanMz4](https://github.com/JonathanMz4)
+- **LinkedIn:** [Jonathan Menezes](https://www.linkedin.com/in/jonathan-menezes-ti/)
 
 ---
 
