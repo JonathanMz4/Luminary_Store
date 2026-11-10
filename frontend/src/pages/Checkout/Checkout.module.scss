@@ -1,0 +1,246 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.checkoutPage {
+  padding: 2rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+
+  @include respond-to('desktop-sm') {
+    grid-template-columns: 1fr 420px;
+  }
+}
+
+.formCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sectionBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h3 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--full {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  input, select {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+
+    &:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px var(--accent-light);
+      background: var(--bg-primary);
+    }
+  }
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-color);
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      border-color: var(--border-hover);
+    }
+
+    &.selected {
+      border-color: var(--accent-primary);
+      background: var(--accent-light);
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      strong {
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        display: block;
+      }
+
+      span {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+    }
+
+    input[type='radio'] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent-primary);
+    }
+  }
+}
+
+.summaryCol {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 100px;
+  box-shadow: var(--shadow-lg);
+
+  h3 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+  }
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+
+  .item {
+    @include flex-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    gap: 0.5rem;
+
+    strong {
+      color: var(--text-primary);
+    }
+  }
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+
+  .row {
+    @include flex-between;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+
+    &--total {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      border-top: 1px dashed var(--border-color);
+      padding-top: 0.75rem;
+      margin-top: 0.25rem;
+      font-family: var(--font-display);
+    }
+  }
+}
+
+.successModal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+
+  .iconBox {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-success);
+    @include flex-center;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .orderCard {
+    width: 100%;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+
+    strong { color: var(--text-primary); }
+  }
+}

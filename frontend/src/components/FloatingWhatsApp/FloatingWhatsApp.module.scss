@@ -1,0 +1,44 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.floatBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-full);
+  background: #25d366;
+  color: #ffffff;
+  @include flex-center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1500;
+  transition: all var(--transition-bounce);
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+  }
+
+  .tooltip {
+    position: absolute;
+    right: calc(100% + 12px);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  &:hover .tooltip {
+    opacity: 1;
+  }
+}

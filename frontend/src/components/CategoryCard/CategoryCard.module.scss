@@ -1,0 +1,45 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  @include card-hover;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--accent-primary);
+  @include flex-center;
+  transition: all var(--transition-smooth);
+  border: 1px solid var(--border-color);
+
+  .card:hover & {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    transform: scale(1.1) rotate(5deg);
+    border-color: transparent;
+    box-shadow: 0 8px 20px var(--accent-glow);
+  }
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

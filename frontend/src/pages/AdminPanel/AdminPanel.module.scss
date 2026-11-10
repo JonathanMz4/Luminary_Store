@@ -1,0 +1,298 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.adminPanel {
+  padding: 2rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.header {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+
+  .brandInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .iconBox {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-lg);
+      background: var(--accent-gradient);
+      color: #ffffff;
+      @include flex-center;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      color: var(--text-primary);
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+
+  button {
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    &.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+  }
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('desktop-sm') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.kpiCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  @include card-hover;
+
+  .kpiTop {
+    @include flex-between;
+
+    span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: var(--accent-light);
+      color: var(--accent-primary);
+      @include flex-center;
+    }
+  }
+
+  strong {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+  }
+
+  .trend {
+    font-size: 0.8rem;
+    color: var(--color-success);
+    font-weight: 700;
+  }
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include respond-to('desktop-sm') {
+    grid-template-columns: 1.6fr 1fr;
+  }
+}
+
+.chartBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .chartContainer {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.tableSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .tableTop {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h3 {
+      font-size: 1.35rem;
+      color: var(--text-primary);
+    }
+  }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+
+  tr {
+    border-bottom: 1px solid var(--border-color);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  th, td {
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    background: var(--bg-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    color: var(--text-primary);
+    vertical-align: middle;
+  }
+
+  .prodImg {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    background: var(--bg-tertiary);
+  }
+}
+
+.statusSelect {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:focus {
+    border-color: var(--accent-primary);
+  }
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .fieldGrid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    input, select, textarea {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+
+      &:focus {
+        border-color: var(--accent-primary);
+      }
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+  }
+}
